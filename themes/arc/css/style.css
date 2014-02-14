@@ -1,0 +1,89 @@
+/* css */
+.navbar .brand {
+        margin-top:5px;
+	padding:0 10px;
+	background:url("../img/logo_small.png") no-repeat 15px 0;
+	height:40px;
+	width:200px;
+}
+.navbar .divider-vertical {
+	margin:0;
+}
+.footer {
+     text-align: center;
+     padding: 30px 0px;
+     margin: 10px -20px 0 -20px;
+     border-top: 1px solid rgb(229, 229, 229);
+     background-color: rgb(245, 245, 245);
+}
+
+.footer p {
+    margin-bottom: 0px;
+    color: rgb(119, 119, 119);
+}
+#sidebar {
+  border:1px solid #eee;
+}
+.box {
+  border:1px solid #eee;
+}
+.box-head {
+  text-align:center;
+  background:#3af;
+  color:white;
+  font-weight:bold;
+  padding:5px;
+  text-shadow:0 1px 2px #333;
+}
+.box-week,
+.box-month {
+  border:1px solid #999;
+}
+.box-week {
+  background:#FAC564;
+}
+.box-month {
+  background:#7EDFF2;
+}
+.clearspace {
+  margin-bottom:5px;
+}
+.sb-head {
+  text-align:center;
+  font-weight:bold;
+  text-shadow:0 1px 1px #fff;
+  border-bottom:1px solid #ccc;
+}
+.sb-box {
+  border-top:1px solid #888;
+}
+.sb-count {
+  padding:10px 20px;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  text-shadow:0 1px 1px #eee;
+}
+.sb-count .sub {
+  font-size:12px;
+}
+
+
+ul.stats-overview {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+ul.stats-overview li {
+    display: inline-block;
+    text-align: center;
+    padding: 0px 15px;
+    font-size: 14px;
+    border-right: 1px solid rgb(232, 232, 232);
+}
+ul.stats-overview li .value {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}

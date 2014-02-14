@@ -111,7 +111,7 @@
       $fields2=Yii::app()->db->createCommand($sql)->queryAll();
 
       $sql="
-        SELECT vid,vnumber,DATE(departure_date) dd, DATE_FORMAT(departure_date,'%H %i') departure_date, CONCAT(scode,ptcode) as sc,SUM(price_paid) amt,COUNT(id) cnt 
+        SELECT vid,vnumber,DATE(departure_date) dd, DATE_FORMAT(departure_date,'%r') departure_date, CONCAT(scode,ptcode) as sc,SUM(price_paid) amt,COUNT(id) cnt 
         FROM booking_history
         WHERE status <6 AND departure_date BETWEEN '{$d1}' AND '{$d2}' AND rid={$route}
         GROUP BY vid,sc
@@ -119,7 +119,7 @@
       ";
       $result=Yii::app()->db->createCommand($sql)->queryAll();
       $sql="
-        SELECT vid,vnumber,DATE(departure_date) dd, departure_date, cargo_class as cc,SUM(price_paid) amt,COUNT(id) cnt 
+        SELECT vid,vnumber,DATE(departure_date) dd, DATE_FORMAT(departure_date,'%r') departure_date, cargo_class as cc,SUM(price_paid) amt,COUNT(id) cnt 
         FROM cargo_history
         WHERE status <6 AND departure_date BETWEEN '{$d1}' AND '{$d2}' AND rid={$route}
         GROUP BY vid,cc
@@ -158,20 +158,21 @@
       $model=new AdvanceTicket('search');
       $model->unsetAttributes();  // clear any default values
       $export=isset($_POST['export'])?1:0;
-      $dr=isset($_POST['date_range'])?$_POST['date_range']:date('Y-m-d').' - '.date('Y-m-d');
+      $dr=isset($_POST['date_range'])?$_POST['date_range']:'';
       $date=explode(' - ',$dr);
-      $d1 = date('Y-m-d',strtotime($date[0]))." ".'00:00:00';
-      $d2 = date('Y-m-d',strtotime($date[1]))." ".'23:59:59';
-      $c = " AND date_used BETWEEN '$d1' AND '$d2'";
-      $c1 = " AND date BETWEEN '$d1' AND '$d2'";
-      if(isset($_POST['date_range']))
+      $c1='';$c2='';
+      if(isset($_POST['date_range'])){
         $model->date_range=$dr;
-
+        $d1 = date('Y-m-d',strtotime($date[0]))." ".'00:00:00';
+        $d2 = date('Y-m-d',strtotime($date[1]))." ".'23:59:59';
+        $c1 = " AND date BETWEEN '$d1' AND '$d2'";
+        $c2 = " AND date_used BETWEEN '$d1' AND '$d2'";
+      }
       if(isset($_GET['AdvanceTicket'])){
         $model->attributes=$_GET['AdvanceTicket'];
       }
       $collections=Collections::model()->findAll(array('condition'=>"1 $c1"));
-      $at=AdvanceTicket::model()->findAll(array('condition'=>"status=2 $c"));
+      $at=AdvanceTicket::model()->findAll(array('condition'=>"status=2 $c2"));
       $classes=SeatingClass::model()->findAll();
       if($export)
         $this->renderPartial('advTktSales',array('data'=>compact('at','classes','model','export','dr','collections')));

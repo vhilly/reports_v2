@@ -30,7 +30,7 @@
           array(
             'options' => array(
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#4572A7']),
+              'colors'=>array('#4572A7'),
               'credits'=>false,
               'title'=>array('text'=>'Revenue On Passenger'),
               'plotOptions'=>array(
@@ -49,10 +49,10 @@
                'categories'=>$months
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Monthly',
                   'data' => $monthly_pax_rev
-                ],
+                ),
               ),
             )
           )
@@ -68,7 +68,7 @@
             'options' => array(
               'credits'=>false,
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#AA4643']),
+              'colors'=>array('#AA4643'),
               'title'=>array('text'=>'Total Passenger'),
               'plotOptions'=>array(
                 'column'=>array(
@@ -86,10 +86,10 @@
                'categories'=>$months
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Monthly',
                   'data' => $monthly_pax_cnt
-                ],
+                ),
               )
             )
           )
@@ -107,7 +107,7 @@
           array(
             'options' => array(
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#8bbc21']),
+              'colors'=>array('#8bbc21'),
               'credits'=>false,
               'title'=>array('text'=>'Revenue On Cargo'),
               'plotOptions'=>array(
@@ -126,10 +126,10 @@
                'categories'=>$months
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Monthly',
                   'data' => $monthly_cargo_rev
-                ],
+                ),
               ),
             )
           )
@@ -145,7 +145,7 @@
             'options' => array(
               'credits'=>false,
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#c42525']),
+              'colors'=>array('#c42525'),
               'title'=>array('text'=>'Total Cargo'),
               'plotOptions'=>array(
                 'column'=>array(
@@ -163,10 +163,10 @@
                'categories'=>$months
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Monthly',
                   'data' => $monthly_cargo_cnt
-                ],
+                ),
               )
             )
           )

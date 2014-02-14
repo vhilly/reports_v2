@@ -1,6 +1,5 @@
 <?php
   $yr=date('Y');
-  $yr='2013';
   $weeks=array();
   $weekly_pax_rev=array();
   $weekly_pax_cnt=array();
@@ -32,7 +31,7 @@
           array(
             'options' => array(
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#4572A7']),
+              'colors'=>array('#4572A7'),
               'credits'=>false,
               'title'=>array('text'=>'Revenue On Passenger'),
               'plotOptions'=>array(
@@ -54,10 +53,10 @@
                'categories'=>$weeks
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Revenue',
                   'data' => $weekly_pax_rev
-                ],
+                ),
               ),
             )
           )
@@ -73,7 +72,7 @@
             'options' => array(
               'credits'=>false,
               'chart'=>array('type'=>'column'),
-              'colors'=>array(['#AA4643']),
+              'colors'=>array('#AA4643'),
               'title'=>array('text'=>'Total Passenger'),
               'plotOptions'=>array(
                 'column'=>array(
@@ -94,10 +93,10 @@
                'categories'=>$weeks
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Passenger',
                   'data' => $weekly_pax_cnt
-                ],
+                ),
               )
             )
           )
@@ -114,7 +113,7 @@
           'bootstrap.widgets.TbHighCharts',
           array(
             'options' => array(
-              'colors'=>array(['#8bbc21']),
+              'colors'=>array('#8bbc21'),
               'chart'=>array('type'=>'column'),
               'credits'=>false,
               'title'=>array('text'=>'Revenue On Cargo'),
@@ -137,10 +136,10 @@
                'categories'=>$weeks
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Revenue',
                   'data' => $weekly_cargo_rev
-                ],
+                ),
               ),
             )
           )
@@ -154,7 +153,7 @@
           'bootstrap.widgets.TbHighCharts',
           array(
             'options' => array(
-              'colors'=>array(['#c42525']),
+              'colors'=>array('#c42525'),
               'credits'=>false,
               'chart'=>array('type'=>'column'),
               'title'=>array('text'=>'Total Cargo'),
@@ -177,10 +176,10 @@
                'categories'=>$weeks
               ),
               'series' => array(
-                [ 
+                array( 
                   'name'=> 'Cargo',
                   'data' => $weekly_cargo_cnt
-                ],
+                ),
               )
             )
           )

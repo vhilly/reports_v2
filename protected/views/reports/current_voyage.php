@@ -154,13 +154,13 @@
                ),
               'series' => array(
                array('name' => 'Cargo',
-                     'data' => [(int) $r['cargo_rev']]
+                     'data' => array((int) $r['cargo_rev'])
                ),
                array('name' => 'Business Class',
-                     'data' => [(int) $r['business_rev']]
+                     'data' => array((int) $r['business_rev'])
                ),
                array('name' => 'Premium Economy',
-                     'data' => [(int) $r['premium_rev']]
+                     'data' => array((int) $r['premium_rev'])
                ),
               ),                                                                    
             )                                                                       
